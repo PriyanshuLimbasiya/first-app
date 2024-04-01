@@ -11,7 +11,7 @@ export class DetailemployeeComponent {
 
   ngOnInit(){
     this._apiEmployee.getById(1).subscribe((res:any)=>{ 
-      this.data=res;
+      // this.data=res;
     });
   }
 
