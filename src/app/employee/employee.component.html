@@ -2,13 +2,13 @@
     <div class="row d-flex justify-content-center align-items-center">
         <div class="col-5 w-25  card" *ngFor="let emp of Employee">
             <div>
-                <img [src]="emp.EmpImage" alt="" style="width:18rem;"/>
+                <img [src]="emp.EmpImage" alt="" style="width:18rem;" />
                 <div class="card-title h5">{{emp.EmpName}}</div>
                 <div class="card-text">{{emp.EmpCity}}</div>
                 <div class="card-text">{{emp.EmpDesc}}</div>
                 <div class="card-text">{{emp.EmpJoiningDate}}</div>
                 <div class="card-text">{{emp.Empexperience}}</div>
-                <a routerLink="./employee" class="btn btn-primary">View</a>
+                <a routerLink="/employee/{{emp.id}}" class="btn btn-primary">View</a>
             </div>
         </div>
     </div>
