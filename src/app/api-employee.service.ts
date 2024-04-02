@@ -14,5 +14,7 @@ export class ApiEmployeeService {
   getById(id: any) {
     return this._http.get(this.apiUrl + id);
   }
-  deleteEmployee() {}
+  deleteEmployee(id:any) {
+    return this._http.delete(this.apiUrl + id);
+  }
 }

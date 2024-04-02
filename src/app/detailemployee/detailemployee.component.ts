@@ -1,25 +1,31 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiEmployeeService } from '../api-employee.service';
-import { Employee } from '../employee';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-detailemployee',
   templateUrl: './detailemployee.component.html',
-  styleUrl: './detailemployee.component.css',
+  styleUrls: ['./detailemployee.component.css'],
 })
 export class DetailemployeeComponent {
-  employeeDetails: any = {};
+  emp: any = {};
   constructor(
     private _activatedRoute: ActivatedRoute,
-    private _api: ApiEmployeeService
+    private _api: ApiEmployeeService,
+    private _router: Router
   ) {}
 
   ngOnInit() {
-    let id = this._activatedRoute.snapshot.params['id'];
+    let id = this._activatedRoute.snapshot.paramMap.get('id');
     this._api.getById(id).subscribe((res: any) => {
-      this.employeeDetails = res;
-      console.log(this.employeeDetails);
+      this.emp = res;
+    });
+  }
+
+  deleteemp(id: any) {
+    this._api.deleteEmployee(id).subscribe((res) => {
+      this._router.navigate(['employee']);
     });
   }
 }
