@@ -4,16 +4,19 @@ import { EmployeeComponent } from './employee/employee.component';
 import { StudentComponent } from './student/student.component';
 import { AppComponent } from './app.component';
 import { DetailemployeeComponent } from './detailemployee/detailemployee.component';
+import { AddEmployeeComponent } from './add-employee/add-employee.component';
 
 const routes: Routes = [
-  {path:'',component:AppComponent},
-  { path:'employee',component:EmployeeComponent },
-  { path:'student', component:StudentComponent},
-  {path:'employee/:id',component:DetailemployeeComponent}
+  { path: '', component: AppComponent },
+  { path: 'employee', component: EmployeeComponent },
+  { path: 'student', component: StudentComponent },
+  { path: 'employee/add', component: AddEmployeeComponent },
+  { path: 'employee/:id', component: DetailemployeeComponent },
+  {path:'employee/edit/:id',component:AddEmployeeComponent}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

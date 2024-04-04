@@ -17,7 +17,7 @@ export class DetailemployeeComponent {
   ) {}
 
   ngOnInit() {
-    let id = this._activatedRoute.snapshot.paramMap.get('id');
+    let id = this._activatedRoute.snapshot.params['id']
     this._api.getById(id).subscribe((res: any) => {
       this.emp = res;
     });

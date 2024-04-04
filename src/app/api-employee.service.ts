@@ -17,4 +17,13 @@ export class ApiEmployeeService {
   deleteEmployee(id:any) {
     return this._http.delete(this.apiUrl + id);
   }
+  insert(form:any)
+  {
+    return this._http.post(this.apiUrl, form);
+  }
+  update(form: any, id: any)
+  {
+    return this._http.put(this.apiUrl + id, form);
+  }
+
 }
