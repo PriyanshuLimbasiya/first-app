@@ -23,7 +23,8 @@
                 <label class="form-label">Experience</label>
                 <input type="City" name="Empexperience" [(ngModel)]="data.Empexperience" class="form-control">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button *ngIf="editid==0" type="submit" class="btn btn-primary">Submit</button>
+            <button *ngIf="editid>0" class="btn btn-outline-success">EDIT</button>
         </div>
     </div>
 </form>

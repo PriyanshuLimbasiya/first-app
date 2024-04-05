@@ -23,17 +23,15 @@ export class AddEmployeeComponent {
     private _activatedroute: ActivatedRoute
   ) {}
   addemp(form: any) {
-    if (this.editid == -1)
-    {
+    if (this.editid == 0) {
       this._api.insert(form).subscribe((res: any) => {
         this.data = res;
         this._router.navigate(['employee']);
       });
-    }
-    else {
+    } else {
       this._api.update(form, this.editid).subscribe((res: any) => {
-        this._router.navigate(['employee'])
-      })
+        this._router.navigate(['employee']);
+      });
     }
   }
 
